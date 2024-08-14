@@ -11,7 +11,7 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     primaryKey: true
-                  autoIncrement: false
+                  autoIncrement: true
               - column:
                   name: nickname
                   type: varchar(50)
