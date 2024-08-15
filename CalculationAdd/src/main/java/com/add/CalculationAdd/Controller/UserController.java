@@ -5,10 +5,7 @@ import com.add.CalculationAdd.Model.UserResponse;
 import com.add.CalculationAdd.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping( "/api/user")
@@ -18,7 +15,7 @@ public class UserController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public UserResponse createUser(CreateUserRequest request){
+    public UserResponse createUser(@RequestBody  CreateUserRequest request){
         return userService.createUser(request);
     }
 }
