@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 //@Component
+
 public interface CreateRequestToEntityMapper {
     //@Mapping(target = "userId", ignore = true)
 //   @Mapping(target = "nickname", source = "nickname")
