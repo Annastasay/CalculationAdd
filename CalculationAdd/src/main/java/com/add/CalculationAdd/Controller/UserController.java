@@ -18,4 +18,9 @@ public class UserController {
     public UserResponse createUser(@RequestBody  CreateUserRequest request){
         return userService.createUser(request);
     }
+
+    @GetMapping("/get")
+    public UserResponse getUser(@RequestParam Long id){
+        return userService.findById(id);
+    }
 }
