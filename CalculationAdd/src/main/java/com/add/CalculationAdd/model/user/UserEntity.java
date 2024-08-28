@@ -1,9 +1,12 @@
-package com.add.CalculationAdd.Model;
+package com.add.CalculationAdd.model.user;
 
+import com.add.CalculationAdd.model.post.PostEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -31,5 +34,8 @@ public class UserEntity {
 
     @Column(name = "register_date")
     private Date registerDate;
+
+    @OneToMany(mappedBy = "userId")
+    private List<PostEntity> posts = new ArrayList<>();
 
 }

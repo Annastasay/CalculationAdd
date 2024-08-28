@@ -1,4 +1,4 @@
-package com.add.CalculationAdd.Model;
+package com.add.CalculationAdd.model.user;
 
 
 import lombok.*;

@@ -1,6 +1,6 @@
-package com.add.CalculationAdd.Repository;
+package com.add.CalculationAdd.repository;
 
-import com.add.CalculationAdd.Model.UserEntity;
+import com.add.CalculationAdd.model.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

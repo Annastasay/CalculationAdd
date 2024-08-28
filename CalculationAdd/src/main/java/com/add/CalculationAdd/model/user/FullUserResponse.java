@@ -1,19 +1,21 @@
-package com.add.CalculationAdd.Model;
+package com.add.CalculationAdd.model.user;
 
-import lombok.AllArgsConstructor;
+
+import com.add.CalculationAdd.model.post.PostResponse;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
-public class UserResponse {
+public class FullUserResponse {
     private Long userId;
     private String nickname;
     private String name;
     private String lastName;
     private int age;
     private Date registerDate;
+    private List<PostResponse> posts;
 }
