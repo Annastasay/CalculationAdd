@@ -1,23 +1,33 @@
 package org.example.starWars.DTO;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonDTO {
-    public String name;
-    public String height;
-    public String mass;
-    public String hair_color;
-    public String skin_color;
-    public String eye_color;
-    public String birth_year;
-    public String gender;
-    public String homeworld;
-    public ArrayList<String> films;
-    public ArrayList<Object> species;
-    public ArrayList<String> vehicles;
-    public ArrayList<String> starships;
-    public Date created;
-    public Date edited;
-    public String url;
+    private String name;
+    private String height;
+    private String mass;
+    private String hair_color;
+    private String skin_color;
+    private String eye_color;
+    private String birth_year;
+    private String gender;
+    private String homeworld;
+    private ArrayList<String> films;
+    private ArrayList<Object> species;
+    private ArrayList<String> vehicles;
+    private ArrayList<String> starships;
+    private Date created;
+    private Date edited;
+    private String url;
 }

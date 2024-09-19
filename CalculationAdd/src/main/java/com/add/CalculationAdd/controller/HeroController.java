@@ -14,10 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/hero")
 @RequiredArgsConstructor
 public class HeroController {
+
     private final StarWarsFeignClient starWarsFeignClient;
 
+
     @GetMapping("/getHero")
-    public PersonDTO getHero(@RequestParam String id){
+    public PersonDTO getHero(@RequestParam String id) {
         return starWarsFeignClient.getPerson(id);
     }
+
+//    @GetMapping("/getHello")
+//    public String getHello(){
+////        return starWarsFeignClient.getHello();
+//        return "";
 }

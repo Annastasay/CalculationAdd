@@ -1,7 +1,10 @@
 package com.add.CalculationAdd.model.post;
 
+import com.add.CalculationAdd.model.user.UserEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -9,6 +12,8 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "posts")
 public class PostEntity {
     @Id
