@@ -12,6 +12,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
 public class UserEntity {
 
@@ -35,7 +37,8 @@ public class UserEntity {
     @Column(name = "register_date")
     private Date registerDate;
 
-    @OneToMany(mappedBy = "userId")
+    @OneToMany
+    @JoinColumn(name = "user_id")
     private List<PostEntity> posts = new ArrayList<>();
 
 }
