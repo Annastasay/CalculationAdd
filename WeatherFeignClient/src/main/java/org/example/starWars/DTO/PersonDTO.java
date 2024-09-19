@@ -1,4 +1,4 @@
-package org.example.holidays.starWars.DTO;
+package org.example.starWars.DTO;
 
 import java.util.ArrayList;
 import java.util.Date;
