@@ -1,5 +1,6 @@
 package com.add.CalculationAdd.controller;
 
+import com.add.CalculationAdd.activeMQ.MessageSend;
 import com.add.CalculationAdd.model.user.CreateUserRequest;
 import com.add.CalculationAdd.model.user.FullUserResponse;
 import com.add.CalculationAdd.model.user.UpdateUserRequest;
@@ -7,6 +8,7 @@ import com.add.CalculationAdd.model.user.UserResponse;
 import com.add.CalculationAdd.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.jms.JMSException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,18 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "User Controller", description = "Ручка работы с пользователем")
 public class UserController {
     private final UserService userService;
+
+    private final MessageSend messageSend;
+
+
+    //broker
+    @PostMapping("/post/message/{message}")
+    private void sendMessageToQueue(@PathVariable("message") String message) {
+        messageSend.sendMessageToQueue("test-queue", message);
+    }    @PostMapping("/post/topic/{message}")
+    private void sendMessageToTopic(@PathVariable("message") String message) throws JMSException {
+        messageSend.sendMessageToTopic(message);
+    }
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)

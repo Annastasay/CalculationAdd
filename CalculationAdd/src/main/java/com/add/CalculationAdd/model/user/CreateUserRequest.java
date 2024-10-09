@@ -13,6 +13,10 @@ import java.util.Date;
 @Builder
 @Schema(description = "Создание пользователя")
 public class CreateUserRequest {
+
+    String obj;
+
+
     @Schema(description = "Никнейм пользователя", example = "pavel1")
     private String nickname;
 
