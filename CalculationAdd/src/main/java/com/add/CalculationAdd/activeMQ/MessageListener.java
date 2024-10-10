@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageListener {
 
-    //тут слушаем сообщения
+    //тут слушаем сообщения из очереди
     @JmsListener(destination = "test-queue")
     public void receiveMessage(String message) {
-        System.out.println("Recieve message" + message);
+        System.out.println("Receive message " + message);
     }
 }

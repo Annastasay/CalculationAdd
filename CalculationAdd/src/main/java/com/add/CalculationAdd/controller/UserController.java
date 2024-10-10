@@ -27,7 +27,9 @@ public class UserController {
     @PostMapping("/post/message/{message}")
     private void sendMessageToQueue(@PathVariable("message") String message) {
         messageSend.sendMessageToQueue("test-queue", message);
-    }    @PostMapping("/post/topic/{message}")
+    }
+
+    @PostMapping("/post/topic/{message}")
     private void sendMessageToTopic(@PathVariable("message") String message) throws JMSException {
         messageSend.sendMessageToTopic(message);
     }
